@@ -1,8 +1,4 @@
 
-
-alert("connected");
-
-
 //firebase 
 
     var config = {
@@ -69,7 +65,6 @@ $("#button").on("click", function(event) {
     console.log(newTrainObj.firstTimeTrain);
     console.log(newTrainObj.frequency);
   
-    alert("trainsuccessfully added");
     $("#desInput").val("");
     $("#firstTrainTimeInput").val("");
    // $("#start-input").val("");
