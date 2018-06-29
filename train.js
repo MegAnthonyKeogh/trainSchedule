@@ -1,4 +1,5 @@
 
+
 //firebase 
 
     var config = {
@@ -19,8 +20,18 @@
   var desintation = "";
   var firstTimeTrain = "";
   var frequency = "";
-var currentTime = moment();
-$("#currenttime").text("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  var updatedTime = "";
+ 
+//var currentTime = moment();
+function displayTime () {
+  var currentTime = moment().format("hh:mm:ss");
+  $("#currenttime").text(currentTime);
+
+}
+setInterval(displayTime, 1000);
+
+
+//$("#currenttime").text("CURRENT TIME: " + displayTime(setInterval));
 
   // 2. Button for adding train
 $("#button").on("click", function(event) {
@@ -32,21 +43,32 @@ $("#button").on("click", function(event) {
      firstTimeTrain = $("#firstTrainTimeInput").val().trim();
      frequency = $("#frequencyInput").val().trim();
   
-     var firstTimeConverted = moment(firstTimeTrain, "HH:mm").subtract(1, "years");
+    
+      var firstTimeConverted = moment(firstTimeTrain, "HH:mm:ss").subtract(1, "years");
     console.log(firstTimeConverted);
+     
 
+     
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     console.log("DIFFERENCE IN TIME: " + diffTime);
-
+    
+    
     var tRemainder = diffTime % frequency;
     console.log(tRemainder);
+    
 
-     var minsAway = frequency - tRemainder;
+    
+    var minsAway = frequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + minsAway);
-
-
+     
+    
+    
     var nextTrain = moment().add(minsAway, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm:ss"));
+    
+    
+  
+    
 
     // Creates variables to connect to firebase
     var newTrainObj = {
@@ -64,7 +86,6 @@ $("#button").on("click", function(event) {
     console.log(newTrainObj.desintation);
     console.log(newTrainObj.firstTimeTrain);
     console.log(newTrainObj.frequency);
-  
     $("#desInput").val("");
     $("#firstTrainTimeInput").val("");
    // $("#start-input").val("");
@@ -111,3 +132,10 @@ console.log(snapshot.val(), " value snapshot")
   })
 
 });
+
+
+
+
+displayTime();
+ 
+
