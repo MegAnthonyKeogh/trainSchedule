@@ -1,0 +1,66 @@
+body {
+background-color: whitesmoke;
+font: white;
+}
+
+.jumbotron {
+    background-color: blue;
+    font: white;
+    font-size: 50px;
+    border-radius: 25px;
+    text-align: center;
+    margin: 20px;
+}
+
+#header {
+    width: 100%;
+    font-size: 25px;
+    background-color: blue;
+    display: flex; 
+    position: relative;
+    border-radius: 25px;
+    padding: 25px;
+    z-index: 0;
+    top: -10px;
+    font: white;
+
+}
+.container-fluid {
+    border-radius: 25px;
+    border: 2px solid blue;
+    padding: 0;
+    margin: 20px;
+   
+}
+
+.table {
+    z-index: 1;
+    position: relative;
+    top: -30px;
+} 
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+} 
+.col,
+  {
+    padding-right: 0;
+    padding-left: 0;
+        }
+h1 {
+    font: white;
+}  
+
+.form-group {
+    padding: 10px;
+    padding-top: 20px;
+    margin: 10px;
+    z-index: 1;
+    position: relative;
+    top: -30px;
+    background-color: whitesmoke;
+}
+
+button {
+    margin-top: 20px;
+}
