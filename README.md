@@ -1,1 +1,5 @@
-# trainSchedule https://meganthonykeogh.github.io/trainSchedule/
+# trainSchedule 
+
+![Missed Train](missed.gif)
+
+https://meganthonykeogh.github.io/trainSchedule/
